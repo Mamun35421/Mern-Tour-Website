@@ -73,7 +73,7 @@ ul {
   color: inherit;
 }
 
-.section__subtitle {
+.section__substitle {
   background: var(--secondary-color);
   font-family: var(--subtitle-font-name);
   width: max-content;
