@@ -7,12 +7,13 @@ import heroVideo from '../assets/images/hero-video.mp4'
 import worldImg from '../assets/images/world.png'
 import Subtitle from '../Shared/Subtitle';
 import SearchBar from '../Shared/SearchBar';
+import ServiceList from '../services/ServiceList';
+
 
 const Home = () => {
   return (
     <>
 
-    {/*Hero section start */}
     <section>
       <Container>
         <Row>
@@ -56,6 +57,40 @@ const Home = () => {
         </Row>
       </Container>
     </section>
+
+    
+    {/*Hero section start */}
+
+    <section>
+      <Container>
+        <Row>
+          <Col lg='3'>
+            <h5 className='services__subtitle'>What we serve</h5>
+            <h2 className='services__title'>We offer our best services</h2>
+          </Col>
+          <ServiceList/>
+        </Row>
+      </Container>
+    </section>
+
+    {/*=========== Featured tour section start ====================*/}
+    <section>
+      <Container>
+      <Row>
+        <Col lg="12" className='mb-5'>
+          <Subtitle subtitle={"Explore"} />
+          <h2 className='featured__tour-title'>Our featured tours</h2>
+        </Col>
+      </Row>
+      </Container>
+    </section>
+
+
+
+
+    {/*=========== Featured tour section end ====================*/}
+
+
     
     </>
   )
