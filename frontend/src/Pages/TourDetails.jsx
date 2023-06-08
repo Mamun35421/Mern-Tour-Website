@@ -14,7 +14,8 @@ const TourDetails = () => {
 
   //destructure properties from tour object
 
-  const {photo,title,desc,price,reviews,city,distance,maxGroupSize} = tour;
+  const {photo,title,desc,price,reviews,city,distance,address,maxGroupSize} = tour;
+  const {totalRating,avgRating} = calculateAvgRating(reviews)
   return (
   <section>
     <Container>
@@ -28,12 +29,50 @@ const TourDetails = () => {
 
               <div className='d-flex align-items-center gap-5'>
               <span className='tour__location d-flex align-items-center gap-1'>
-                <i class="ri-star-fill"></i> {calculateAvgRating ===0 ? null : avgRating}
-                {totalRating===0 ? 'Not rated' :<span>({reviews.length})</span> }
-                
+                <i class="ri-star-fill" style={{color:"var(--secondary-color)"}}></i> {calculateAvgRating ===0 ? null : avgRating}
+                {totalRating===0 ? 'Not rated' :
+                <span>({reviews.length})</span> }
+                </span>
+
+                <span>
+                <i class="ri-map-pin-user-fill"></i> {address}
                 </span>
               </div>
+
+              <div className='tour__extra-details'>
+               
+                <span><i class="ri-map-pin-fill"></i>{city}</span>
+                <span><i class="ri-money-dollar-circle-line"></i> ${price} / per person</span>
+                <span><i class="ri-group-line"></i> {maxGroupSize}</span>
+              </div>
+
+              <h5>Description</h5>
+              <p>{desc}</p>
             </div>
+
+            {/*===============tour reviews section==================*/} 
+              <div className="tour__reviews mt-4">
+                <h4>Reviews ({reviews?.length} reviews)</h4>
+
+                <Form>
+                  <div className='d-flex align-items-center gapp-3 mb-4 rating__group'>
+                    <span> 1 <i class="ri-star-s-fill"></i></span>
+                    <span> 2 <i class="ri-star-s-fill"></i></span>
+                    <span> 3 <i class="ri-star-s-fill"></i></span>
+                    <span> 4 <i class="ri-star-s-fill"></i></span>
+                    <span> 5 <i class="ri-star-s-fill"></i></span>
+                  </div>
+                  <div className='review__input'>
+                    <input type='text' placeholder='Share your thoughts' />
+                    <button className='btn primary__btn text-white' type='submit'>
+                      Submit
+                    </button>
+                  </div>
+
+
+                </Form>
+              </div>
+            {/*===============tour reviews section end==================*/} 
           </div>
         
         </Col>
