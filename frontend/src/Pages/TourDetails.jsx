@@ -6,6 +6,7 @@ import tourData from '../assets/data/tours'
 import calculateAvgRating from '../utils/avgRating'
 import avatar from '../assets/images/avatar.jpg'
 import Booking from '../Components/Booking/Booking'
+import Newsletter from '../Shared/Newsletter'
 
 const TourDetails = () => {
   const {id}  = useParams();
@@ -36,7 +37,9 @@ const TourDetails = () => {
     //later will call our api
   }
   return (
-  <section>
+
+    <>
+      <section>
     <Container>
       <Row>
         <Col lg='8'>
@@ -128,6 +131,10 @@ const TourDetails = () => {
       </Row>
     </Container>
   </section>
+  <Newsletter/>
+</>
+
+  
   )
 }
 
