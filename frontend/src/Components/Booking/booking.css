@@ -45,4 +45,6 @@
     border-radius: .5rem;
     color: var(--heading-color);
     font-size: 1rem;
+    border-bottom: 1px solid rgb(229,231,235);
+ 
 }
