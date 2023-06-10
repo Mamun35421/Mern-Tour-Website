@@ -9,11 +9,7 @@ dotenv.config()
 const app = express()
 const port = process.env.PORT || 8000
 
-//for testing
 
-app.get('/',(req, res) =>{
-    res.send('api is working');
-});
 
 //middleware
 app.use(express.json())
